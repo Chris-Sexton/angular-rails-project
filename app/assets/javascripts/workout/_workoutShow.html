@@ -1,5 +1,22 @@
-<h1>Dumbbell Workout</h1>
-
 <div ng-repeat="workout in workouts | filter: {id: id}">
-  {{ workout.title }}
+  <h4 class="center">{{ workout.title }}</h4>
+  <h6 class="center">Category - {{workout.category}}</h6><br>
 </div>
+
+<table ng-repeat="workout in workouts | filter: {id: id}" class="centered responsive-table">
+  <thead>
+    <tr>
+        <th ng-model="exercise">Exercise</th>
+        <th ng-model="sets">Sets</th>
+        <th ng-model="reps">Reps</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>{{workout.exercise}}</td>
+      <td>{{workout.sets}}</td>
+      <td>{{workout.reps}}</td>
+    </tr>
+  </tbody>
+</table>
