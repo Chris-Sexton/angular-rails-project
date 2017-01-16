@@ -1,11 +1,20 @@
-<div ng-include="'nav/_workoutNav.html'"></div>
-<ui-view></ui-view>  
+<div ng-include="'nav/_workoutNav.html'"></div> 
 
-<div ng-repeat="workout in workouts">
-  <ul>
-    <li>
-      <a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a>
-      <i class="material-icons" ng-click="destroy(workout)">delete</i>
-    </li>
-  </ul>
-</div>
+
+<table class="centered responsive-table">
+  <thead>
+    <tr>
+        <th ng-model="title">Title</th>
+        <th ng-model="category">Category</th>
+    </tr>
+  </thead>
+
+  <tbody ng-repeat="workout in workouts">
+    <tr>
+      <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a></td>
+      <td>{{workout.category}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ui-view></ui-view> 
