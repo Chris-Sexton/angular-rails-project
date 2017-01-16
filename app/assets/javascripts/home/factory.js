@@ -22,6 +22,20 @@ angular.module('app')
     });
   };
 
+  o.upvote = function(workout) {
+    return $http.put('/workouts/' + workout.id + '/upvote.json')
+      .success(function(data){
+        workout.upvotes += 1;
+      });
+  };
+
+  o.downvote = function(workout) {
+    return $http.put('/workouts/' + workout.id + '/downvote.json')
+      .success(function(data){
+        workout.downvotes += 1;
+      });
+  };
+
   o.destroy = function(workout) {
     return $http.delete('/workouts/' + workout.id + '.json').success(function(data) {
       o.workouts.splice(o.workouts.indexOf(workout), 1);

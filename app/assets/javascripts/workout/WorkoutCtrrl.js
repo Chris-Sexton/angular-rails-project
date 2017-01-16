@@ -8,6 +8,14 @@
       workouts.destroy(workout);
   };
 
+  $scope.incrementUpvotes = function(workout) {
+    workouts.upvote(workout);
+  };
+
+  $scope.incrementDownvotes = function(workout) {
+    workouts.downvote(workout);
+  };
+
   $scope.addWorkout = function() {
     if(!$scope.title || $scope.title === '') { return; }
 

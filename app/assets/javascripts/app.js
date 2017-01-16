@@ -23,7 +23,7 @@ angular
         })
 
         .state('workouts.show', {
-          url: '{id}',
+          url: '/{id}',
           templateUrl: 'workout/_workoutShow.html',
           controller: 'WorkoutCtrl',
           resolve: {

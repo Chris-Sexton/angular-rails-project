@@ -12,6 +12,18 @@ class WorkoutsController < ApplicationController
     respond_with Workout.find(params[:id])
   end
 
+  def upvote
+    workout = Workout.find(params[:id])
+    workout.increment!(:upvotes)
+    respond_with workout
+  end
+
+  def downvote
+    workout = Workout.find(params[:id])
+    workout.increment!(:downvotes)
+    respond_with workout
+  end
+
   def destroy
     respond_with Workout.find(params[:id]).destroy
   end
