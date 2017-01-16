@@ -22,6 +22,17 @@ angular
           }
         })
 
+        .state('create', {
+          url: '/new',
+          templateUrl: 'workout/_workoutNew.html',
+          controller: 'WorkoutCtrl',
+          resolve: {
+            workoutPromise: ['workouts', function(workouts){
+              return workouts.getAll();
+            }]
+          }
+        })
+
         .state('workouts.show', {
           url: '/{id}',
           templateUrl: 'workout/_workoutShow.html',
