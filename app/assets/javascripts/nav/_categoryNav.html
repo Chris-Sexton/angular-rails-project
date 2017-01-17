@@ -5,6 +5,8 @@
       <li><a href="#/home">Home</a></li>
       <li><a href="#/new">New Workout</a></li>
       <li><a href="#/workouts">Workouts</a></li>
+      <li ng-show="signedIn()"><a href="#/">{{ user.username | uppercase }}</a></li>
+      <li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
     </ul>
   </div>
 </nav><br>

@@ -28,3 +28,8 @@ background: linear-gradient(to left, #283048 , #859398); /* W3C, IE 10+/ Edge, F
   bottom: 1px;
 
 }
+
+#organizeCat {
+  border: 1px solid black;
+  display: inline-block;
+}

@@ -13,7 +13,6 @@
     {"name" :"Back"},
     {"name" :"Chest"},
     {"name" :"Legs"},
-    {"name" :"Chest & Back"},
     {"name" :"Cardio"},
     {"name" :"Abs"}
   ];

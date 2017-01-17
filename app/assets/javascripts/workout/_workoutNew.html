@@ -3,28 +3,28 @@
 <div class="row">
   <form ng-submit='addWorkout()' class="col s12">
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input col s6">
         <input placeholder="Title" ng-model="title" type="text" class="validate">
       </div>
     </div>
-    <div class="input-field col s3">
-      <select ng-model="category" class="browser-default">
-          <option value="" disabled="disabled" selected="selected">Choose your option</option>
+    <div class="row">
+      <select ng-model="category" class="browser-default col m6">
+          <option value="" disabled="disabled" selected="selected">Choose Category</option>
           <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
       </select>
     </div>
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input col s12">
         <input placeholder="Exercise" ng-model="exercise" type="text" class="validate">
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input col s12">
         <input placeholder="Sets" ng-model="sets" type="text" class="validate">
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input col s12">
         <input placeholder="Reps" ng-model="reps" type="text" class="validate">
       </div>
     </div>
