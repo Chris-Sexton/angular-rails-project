@@ -22,6 +22,10 @@ angular.module('app')
     });
   };
 
+  o.addCategory = function(id, category) {
+    return $http.post('/categories/' + id + '/categories.json', category);
+  };
+
   o.destroy = function(category) {
     return $http.delete('/categories/' + category.id + '.json').success(function(data) {
       o.categories.splice(o.categories.indexOf(category), 1);

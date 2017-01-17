@@ -1,9 +1,10 @@
 <div ng-repeat="workout in workouts | filter: {id: id}">
   <h4 class="center">{{ workout.title }}</h4>
-  <h6 class="center">Category - {{workout.category}}</h6>
   <h5 class="center"><i class="material-icons" ng-click="incrementUpvotes(workout)">thumb_up</i> - {{workout.upvotes}}</i></h5>
   <h5 class="center"><i class="material-icons" ng-click="incrementDownvotes(workout)">thumb_down</i> - {{workout.downvotes}}</i></h5>
+  <h5 class="center">Category - {{workout.category}}</h5>
 </div>
+
 
 <table ng-repeat="workout in workouts | filter: {id: id}" class="centered responsive-table">
   <thead>

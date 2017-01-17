@@ -1,7 +1,7 @@
 class WorkoutsController < ApplicationController
 
   def index
-    respond_with Workout.all 
+    respond_with Workout.all
   end
 
   def create 
@@ -31,7 +31,7 @@ class WorkoutsController < ApplicationController
   private 
 
   def workout_params
-    params.require(:workout).permit(:title, :category, :exercise, :sets, :reps)
+    params.require(:workout).permit(:title, :exercise, :sets, :reps, :category)
   end
 
 end

@@ -6,10 +6,13 @@
       <div class="input-field col s6">
         <input placeholder="Title" ng-model="title" type="text" class="validate">
       </div>
-      <div class="input-field col s6">
-        <input placeholder="Category" ng-model="category" type="text" class="validate">
-      </div>
     </div>
+      <div class="input-field col s3">
+        <select ng-model="category" class="browser-default">
+            <option value="" disabled="disabled" selected="selected">Choose your option</option>
+            <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+        </select>
+      </div>
     <div class="row">
       <div class="input-field col s12">
         <input placeholder="Exercise" ng-model="exercise" type="text" class="validate">

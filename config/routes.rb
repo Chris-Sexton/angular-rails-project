@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :categories
+  # resources :categories
   root to: 'application#home'
 
   resources :workouts, only: [:create, :index, :show, :destroy] do 
