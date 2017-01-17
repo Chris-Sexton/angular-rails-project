@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   respond_to :json
 
   skip_before_action :verify_authenticity_token, if: :json_request?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def home
     render 'layouts/application'
@@ -15,6 +16,12 @@ class ApplicationController < ActionController::Base
 
   def json_request?
     request.format.json?
+  end
+
+  private
+  
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :username
   end
 
 end

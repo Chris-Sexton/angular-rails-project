@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
+
+gem 'devise'
+
+gem 'angular-rails-templates'
+gem 'angular_rails_csrf'
+gem 'materialize-sass'
 gem 'responders', '~> 2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'

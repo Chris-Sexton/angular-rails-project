@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>Register</h1>
+</div>
+
+<div class="row">
+  <form class="col s12" ng-submit="register()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Email" type="email" ng-model="user.email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="Username" ng-model="user.username" type="text">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Password" type="password" ng-model="user.password">
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" value="Register" name="action">Submit
+      <i class="material-icons right"></i>
+    </button>
+  </form>
+</div>
