@@ -2,11 +2,11 @@
   <div class="nav-wrapper" ng-controller="NavCtrl">
     <h1 class="brand-logo center" id="nav-text">Home</h1>  
     <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a href="#/workouts">Workouts</a></li>
-      <li><a href="#/new">New Workout</a></li>
-      <li ng-hide="signedIn()"><a href="#/login">Log In</a></li>
-      <li ng-hide="signedIn()"><a href="#/register">Register</a></li>
-      <li ng-show="signedIn()"><a href="#/">{{ user.username | uppercase }}</a></li>
+      <li><a href="#!/workouts">Workouts</a></li>
+      <li><a href="#!/new">New Workout</a></li>
+      <li ng-hide="signedIn()"><a href="#!/login">Log In</a></li>
+      <li ng-hide="signedIn()"><a href="#!/register">Register</a></li>
+      <li ng-show="signedIn()"><a href="#!/">{{ user.username | uppercase }}</a></li>
       <li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
     </ul>
   </div>

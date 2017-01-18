@@ -5,7 +5,7 @@ class WorkoutsController < ApplicationController
   end
 
   def create 
-    respond_with Workout.create(workout_params)
+    respond_with Workout.create(workout_params.merge(user_id: current_user.id))
   end
 
   def show

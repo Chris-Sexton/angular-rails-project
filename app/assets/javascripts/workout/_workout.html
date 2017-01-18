@@ -12,20 +12,22 @@
     </select>
   </div>
 
-    <table class="centered col s12 m6 l6">
-      <thead>
-        <tr>
-            <th ng-model="title">Title</th> 
-            <th ng-model="category">Category</th>
-        </tr>
-      </thead>
+<table class="centered col s12 m6 l6">
+  <thead>
+    <tr>
+        <th ng-model="title">Title</th> 
+        <th ng-model="category">Category</th>
+        <th ng-model="user">User</th>
+    </tr>
+  </thead>
 
-      <tbody ng-repeat="workout in workouts | filter: search | filter: query">
-        <tr>
-          <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a><a ng-click="destroy(workout)"><i class="material-icons">delete</i></a></td>
-          <td>{{workout.category}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <tbody ng-repeat="workout in workouts | filter: search | filter: query">
+    <tr>
+      <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a><a ng-click="destroy(workout)"><i class="material-icons">delete</i></a></td>
+      <td>{{workout.category}}</td>
+      <td>posted by: {{workout.user.username}}</td>
+    </tr>
+  </tbody>
+</table>
 
-    <ui-view></ui-view> 
+<ui-view></ui-view> 
