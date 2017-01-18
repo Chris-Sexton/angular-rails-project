@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :favorites
   devise_for :users
   # resources :categories
   root to: 'application#home'

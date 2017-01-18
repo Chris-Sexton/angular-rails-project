@@ -11,6 +11,12 @@ angular
           controller: 'MainCtrl'
         })
 
+        .state('home.favorites', {
+          url: '/favorites',
+          templateUrl: 'favorites/_home.html',
+          controller: 'FavoriteCtrl'
+        })
+
         .state('workouts', {
           url: '/workouts',
           templateUrl: 'workout/_workout.html',

@@ -25,7 +25,7 @@
     <tr>
       <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a><a ng-click="destroy(workout)"><i class="material-icons">delete</i></a></td>
       <td>{{workout.category}}</td>
-      <td>posted by: {{workout.user.username}}</td>
+      <td>Created by: {{workout.user.username | uppercase }}</td>
     </tr>
   </tbody>
 </table>

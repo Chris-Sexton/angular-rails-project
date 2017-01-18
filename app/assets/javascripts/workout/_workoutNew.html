@@ -1,6 +1,5 @@
 <div ng-include="'nav/_workoutNewNav.html'"></div>
-
-<div class="row">
+<button type="button" ng-click="template='form1'">Add Field</button>
   <form ng-submit='addWorkout()' class="col s12" name="form">
     <div class="row">
       <div class="input col s6">
@@ -18,6 +17,7 @@
           <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
       </select>
     </div>
+
     <div class="row">
       <div class="input col s12">
         <div ng-if="form.exercise.$touched" class="error">
@@ -28,6 +28,7 @@
         <input placeholder="Exercise" name="exercise" ng-model="exercise" type="text" class="validate" required="required">
       </div>
     </div>
+
     <div class="row">
       <div class="input col s12">
       <div ng-if="form.sets.$touched" class="error">
@@ -40,7 +41,7 @@
     </div>
     <div class="row">
       <div class="input col s12">
-      <div ng-if="form.reps.$touched" class="error">
+        <div ng-if="form.reps.$touched" class="error">
           <div ng-if="form.reps.$error.required">
             Number of Reps is Required
           </div>
@@ -48,8 +49,17 @@
         <input placeholder="Reps" ng-model="reps" name="reps" type="text" class="validate" required="required">
       </div>
     </div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+
+    <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="form.$setUntouched">Submit
       <i class="material-icons right">send</i>
     </button>
   </form>
-</div>
+
+
+  <script type="text/ng-template" id="form1">  
+    <div class="row">
+      <div class="input col s12">
+        <input placeholder="Exercise" ng-model="exercise" type="text" class="validate" name="exercise">
+      </div>
+    </div>
+  </script>

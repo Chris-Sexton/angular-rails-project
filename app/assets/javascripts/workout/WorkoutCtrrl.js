@@ -2,14 +2,6 @@
   
   $scope.workouts = workouts.workouts;
 
-  // $scope.workouts = [{
-  //   title: '',
-  //   category: '',
-  //   exercise: '',
-  //   sets: '',
-  //   reps: ''
-  // }];
-
   $scope.id = $state.params.id;
 
   $scope.destroy = function(workout) {
@@ -49,17 +41,7 @@
     $scope.reps = '';
   };
 
-  // $scope.addExercise = function($event) {
-  //   $scope.workouts.push({exercise: ''});
-  //   $event.preventDefault();
-  // }; 
-
-// $scope.addExercise = function() {
-//   var newItemNo = $scope.workouts.length+1;
-//   $scope.workouts.push({'id':'exercise'+newItemNo});
-// };
-
-};
+}
 
 angular 
   .module('app')
