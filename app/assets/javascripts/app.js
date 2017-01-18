@@ -2,12 +2,7 @@ angular
   .module('app', ['ui.router', 'templates', 'Devise'])
   .directive('addExercise', function() {
     return {
-      template: '<input placeholder="Exercise" name="exercise" ng-model="exercise" type="text" class="validate" required="required">',
-      link: function($scope, element, attrs) {
-        $scope.clickMe = function() {
-          $scope.workouts.push("hello");
-        }
-      }
+      templateUrl: 'workout/_newWorkout.html'
     }
   })
   .config([

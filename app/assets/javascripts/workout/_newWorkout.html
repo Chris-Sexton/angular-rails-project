@@ -1,0 +1,54 @@
+  <form ng-submit='addWorkout()' class="col s12" name="form">
+    <div class="row">
+      <div class="input col s6">
+      <div ng-if="form.title.$touched" class="error">
+        <div ng-if="form.title.$error.required">
+          Title is Required!
+        </div>
+      </div>
+        <input placeholder="Title" name="title" ng-model="title" type="text" class="validate" required="required">
+      </div>
+    </div>
+    <div class="row">
+      <select ng-model="category" class="browser-default col m6" name="category" required="required">
+          <option value="" disabled="disabled" selected="selected">Choose Category</option>
+          <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="input col s12">
+        <div ng-if="form.exercise.$touched" class="error">
+          <div ng-if="form.exercise.$error.required">
+            Exercise Name is Required
+          </div>
+        </div>
+        <input placeholder="Exercise" name="exercise" ng-model="exercise" type="text" class="validate" required="required">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input col s12">
+      <div ng-if="form.sets.$touched" class="error">
+          <div ng-if="form.sets.$error.required">
+            Number of Sets is Required
+          </div>
+        </div>
+        <input placeholder="Sets" ng-model="sets" type="text" class="validate" name="sets" required="required">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input col s12">
+        <div ng-if="form.reps.$touched" class="error">
+          <div ng-if="form.reps.$error.required">
+            Number of Reps is Required
+          </div>
+        </div>
+        <input placeholder="Reps" ng-model="reps" name="reps" type="text" class="validate" required="required">
+      </div>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="form.$setUntouched">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </form>

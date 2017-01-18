@@ -1,31 +1,3 @@
 <div ng-include="'nav/_workoutNewNav.html'"></div>
-<form ng-submit='addWorkout()' class="col s12" name="form">
-  <div class="row">
-    <div class="input col s6">
-    <div ng-if="form.title.$touched" class="error">
-      <div ng-if="form.title.$error.required">
-        Title is Required!
-      </div>
-    </div>
-      <input placeholder="Title" name="title" ng-model="title" type="text" class="validate" required="required">
-    </div>
-  </div>
 
-  <div class="row" ng-repeat="workout in workouts track by $index">
-    <add-exercise></add-exercise>
-    <button type="button" ng-click="add-exercise">Click Me</button>
-  </div>
-
-  <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="form.$setUntouched">Submit
-    <i class="material-icons right">send</i>
-  </button>
-</form>
-
-
-<script type="text/ng-template" id="form1">  
-  <div class="row">
-    <div class="input col s12">
-      <input placeholder="Exercise" ng-model="exercise" type="text" class="validate" name="exercise">
-    </div>
-  </div>
-</script>
+<div add-exercise></div>
