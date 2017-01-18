@@ -5,13 +5,13 @@ angular.module('app')
   };
 
    o.getAll = function() {
-    return $http.get('/workouts.json').success(function(data){
+    return $http.get('/workouts.json').then(function(data){
       angular.copy(data, o.workouts);
     });
   };
 
   o.create = function(workout) {
-    return $http.post('/workouts.json', workout).success(function(data){
+    return $http.post('/workouts.json', workout).then(function(data){
       o.workouts.push(data);
     });
   };
@@ -24,20 +24,20 @@ angular.module('app')
 
   o.upvote = function(workout) {
     return $http.put('/workouts/' + workout.id + '/upvote.json')
-      .success(function(data){
+      .then(function(data){
         workout.upvotes += 1;
       });
   };
 
   o.downvote = function(workout) {
     return $http.put('/workouts/' + workout.id + '/downvote.json')
-      .success(function(data){
+      .then(function(data){
         workout.downvotes += 1;
       });
   };
 
   o.destroy = function(workout) {
-    return $http.delete('/workouts/' + workout.id + '.json').success(function(data) {
+    return $http.delete('/workouts/' + workout.id + '.json').then(function(data) {
       o.workouts.splice(o.workouts.indexOf(workout), 1);
     });
   };

@@ -1,25 +1,31 @@
-<div ng-repeat="workout in workouts | filter: {id: id}">
-  <h4 class="center">{{ workout.title }}</h4>
-  <h5 class="center"><i class="material-icons" ng-click="incrementUpvotes(workout)">thumb_up</i> - {{workout.upvotes}}</i></h5>
-  <h5 class="center"><i class="material-icons" ng-click="incrementDownvotes(workout)">thumb_down</i> - {{workout.downvotes}}</i></h5>
-  <h5 class="center">Category - {{workout.category}}</h5>
+<div class="row" ng-repeat="workout in workouts | filter: {id: id}">
+  <div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text center">
+        <span class="card-title">{{workout.title}}</span>
+        <h6 class="center">Category - {{workout.category}}</h6>
+        <h6 class="center"><i class="material-icons" ng-click="incrementUpvotes(workout)">thumb_up</i> - {{workout.upvotes}}</i></h6>
+        <h6 class="center"><i class="material-icons" ng-click="incrementDownvotes(workout)">thumb_down</i> - {{workout.downvotes}}</i></h6>
+        <table>
+          <thead>
+            <tr>
+                <th ng-model="exercise">Exercise</th>
+                <th ng-model="sets">Sets</th>
+                <th ng-model="reps">Reps</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>{{workout.exercise}}</td>
+              <td>{{workout.sets}}</td>
+              <td>{{workout.reps}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-action">
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<table ng-repeat="workout in workouts | filter: {id: id}" class="centered responsive-table">
-  <thead>
-    <tr>
-        <th ng-model="exercise">Exercise</th>
-        <th ng-model="sets">Sets</th>
-        <th ng-model="reps">Reps</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>{{workout.exercise}}</td>
-      <td>{{workout.sets}}</td>
-      <td>{{workout.reps}}</td>
-    </tr>
-  </tbody>
-</table>
