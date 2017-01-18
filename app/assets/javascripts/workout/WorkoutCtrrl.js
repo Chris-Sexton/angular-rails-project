@@ -1,5 +1,5 @@
- function WorkoutCtrl($scope, $state, $stateParams, workouts) {
-  
+function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+
   $scope.workouts = workouts.workouts;
 
   $scope.id = $state.params.id;
@@ -41,8 +41,12 @@
     $scope.reps = '';
   };
 
+  $scope.addExercise = function () {
+    $scope.workouts.push({exercise: ''});
+  };
+
 }
 
 angular 
-  .module('app')
-  .controller('WorkoutCtrl', WorkoutCtrl);
+.module('app')
+.controller('WorkoutCtrl', WorkoutCtrl);}
