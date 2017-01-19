@@ -1,0 +1,83 @@
+<form ng-submit='addWorkout()' class="col s12" name="form">
+  <div class="row">
+    <div class="input col s6">
+      <input placeholder="Title" name="title" ng-model="title" type="text" class="validate" required="required">
+    </div>
+  </div>
+  <div class="row">
+    <select ng-model="category" class="browser-default col m6" name="category" required="required">
+        <option value="" disabled="disabled" selected="selected">Choose Category</option>
+        <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <div class="input col s12">
+      <input placeholder="Exercise" name="exercise" ng-model="exercise" type="text" class="validate" required="required">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input col s12">
+      <input placeholder="Sets" ng-model="sets" type="text" class="validate" name="sets" required="required">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input col s12">
+      <input placeholder="Reps" ng-model="reps" name="reps" type="text" class="validate" required="required">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <button type="button" ng-click="toggle2()">Add Exercise</button>
+
+      <p ng-show="ex2">
+        <input placeholder="Exercise 2" type="text" ng-model="exercise1" class="validate">
+        <input placeholder="Sets" name="set1" ng-model="set1" type="text" class="validate">
+        <input placeholder="Reps" name="rep1" ng-model="rep1" type="text" class="validate">
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <button type="button" ng-click="toggle3()">Add Exercise</button>
+
+      <p ng-show="ex3">
+        <input placeholder="Exercise 3" type="text" ng-model="exercise2" class="validate">
+        <input placeholder="Sets" name="set2" ng-model="set2" type="text" class="validate">
+        <input placeholder="Reps" name="rep2" ng-model="rep2" type="text" class="validate">
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <button type="button" ng-click="toggle4()">Add Exercise</button>
+
+      <p ng-show="ex4">
+        <input placeholder="Exercise 4" type="text" ng-model="exercise3" class="validate">
+        <input placeholder="Sets" name="set3" ng-model="set3" type="text" class="validate">
+        <input placeholder="Reps" name="rep3" ng-model="rep3" type="text" class="validate">
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <button type="button" ng-click="toggle5()">Add Exercise</button>
+
+      <p ng-show="ex5">
+        <input placeholder="Exercise 5" type="text" ng-model="exercise4" class="validate">
+        <input placeholder="Sets" name="set4" ng-model="set4" type="text" class="validate">
+        <input placeholder="Reps" name="rep4" ng-model="rep4" type="text" class="validate">
+      </p>
+    </div>
+  </div>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="form.$setUntouched">Submit
+    <i class="material-icons right">send</i>
+  </button>
+</form>

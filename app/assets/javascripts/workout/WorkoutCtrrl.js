@@ -1,4 +1,4 @@
-function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   
   $scope.workouts = workouts.workouts;
 
@@ -14,7 +14,8 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
     {"name" :"Chest"},
     {"name" :"Legs"},
     {"name" :"Cardio"},
-    {"name" :"Abs"}
+    {"name" :"Abs"},
+    {"name" :"Shoulders"}
   ];
 
   $scope.incrementUpvotes = function(workout) {
@@ -33,13 +34,62 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
       category: $scope.category,
       exercise: $scope.exercise,
       sets: $scope.sets,
-      reps: $scope.reps
+      reps: $scope.reps,
+      exercise1: $scope.exercise1,
+      exercise2: $scope.exercise2,
+      exercise3: $scope.exercise3,
+      exercise4: $scope.exercise4,
+      set1: $scope.set1,
+      set2: $scope.set2,
+      set3: $scope.set3,
+      set4: $scope.set4,
+      rep1: $scope.rep1,
+      rep2: $scope.rep2,
+      rep3: $scope.rep3,
+      rep4: $scope.rep4
     });
     $scope.title = '';
     $scope.exercise = '';
     $scope.sets = '';
     $scope.reps = '';
+    $scope.exercise1 = '';
+    $scope.exercise2 = '';
+    $scope.exercise3 = '';
+    $scope.exercise4 = '';
+    $scope.set1 = '';
+    $scope.set2 = '';
+    $scope.set3 = '';
+    $scope.set4 = '';
+    $scope.rep1 = '';
+    $scope.rep2 = '';
+    $scope.rep3 = '';
+    $scope.rep4 = '';
   };
+
+    $scope.ex1 = false;
+      $scope.toggle1 = function() {
+          $scope.ex1 = !$scope.ex1;
+    };
+
+    $scope.ex2 = false;
+      $scope.toggle2 = function() {
+          $scope.ex2 = !$scope.ex2;
+    };
+
+    $scope.ex3 = false;
+      $scope.toggle3 = function() {
+          $scope.ex3 = !$scope.ex3;
+    };
+
+    $scope.ex4 = false;
+      $scope.toggle4 = function() {
+          $scope.ex4 = !$scope.ex4;
+    };
+
+    $scope.ex5 = false;
+      $scope.toggle5 = function() {
+          $scope.ex5 = !$scope.ex5;
+    };
 
 }
 

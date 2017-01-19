@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118183017) do
+ActiveRecord::Schema.define(version: 20170119201504) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "title"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 20170118183017) do
     t.integer  "upvotes"
     t.integer  "downvotes"
     t.integer  "user_id"
+    t.string   "exercise1"
+    t.string   "exercise2"
+    t.string   "exercise3"
+    t.string   "exercise4"
+    t.string   "set1"
+    t.string   "set2"
+    t.string   "set3"
+    t.string   "set4"
+    t.string   "rep1"
+    t.string   "rep2"
+    t.string   "rep3"
+    t.string   "rep4"
   end
 
   add_index "workouts", ["user_id"], name: "index_workouts_on_user_id"

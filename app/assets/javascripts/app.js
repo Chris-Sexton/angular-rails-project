@@ -2,7 +2,7 @@ angular
   .module('app', ['ui.router', 'templates', 'Devise'])
   .directive('addExercise', function() {
     return {
-      templateUrl: 'workout/_newWorkout.html'
+      templateUrl: 'workout/_workoutForm.html'
     }
   })
   .config([
