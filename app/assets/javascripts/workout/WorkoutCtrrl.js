@@ -1,4 +1,4 @@
- function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   
   $scope.workouts = workouts.workouts;
 
