@@ -12,22 +12,32 @@
     </select>
   </div>
 
-<table class="centered col s12 m6 l6">
-  <thead>
-    <tr>
-        <th ng-model="title">Title</th> 
-        <th ng-model="category">Category</th>
-        <th ng-model="user">User</th>
-    </tr>
-  </thead>
+<div>
+  <table class="centered col s12 m6 l6">
+    <thead>
+      <tr>
+          <th ng-model="title">Title</th> 
+          <th ng-model="category">Category</th>
+          <th ng-model="user">User</th>
+      </tr>
+    </thead>
 
-  <tbody ng-repeat="workout in workouts | filter: search | filter: query">
-    <tr>
-      <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a><a ng-click="destroy(workout)"><i class="material-icons">delete</i></a></td>
-      <td>{{workout.category}}</td>
-      <td>Created by: {{workout.user.username | uppercase }}</td>
-    </tr>
-  </tbody>
-</table>
+    <tbody ng-repeat="workout in workouts | startFrom:currentPage*pageSize | limitTo:pageSize">
+      <tr>
+        <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a><a ng-click="destroy(workout)"><i class="material-icons">delete</i></a></td>
+        <td>{{workout.category}}</td>
+        <td>Created by: {{workout.user.username | uppercase }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+</div>
 
 <ui-view></ui-view> 
