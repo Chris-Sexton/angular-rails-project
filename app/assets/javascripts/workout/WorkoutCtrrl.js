@@ -1,4 +1,4 @@
-function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   
   $scope.workouts = workouts.workouts;
 
@@ -47,8 +47,11 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
       rep2: $scope.rep2,
       rep3: $scope.rep3,
       rep4: $scope.rep4
+      // exercise3: $scope.exercise3,
+      // exercise4: $scope.exercise4
     });
     $scope.title = '';
+    // $scope.category = '';
     $scope.exercise = '';
     $scope.sets = '';
     $scope.reps = '';
@@ -66,40 +69,45 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
     $scope.rep4 = '';
   };
 
-    $scope.ex1 = false;
-      $scope.toggle1 = function() {
-          $scope.ex1 = !$scope.ex1;
-    };
+  $scope.update = function(workout) {
+    console.log(workout);
+    workouts.update(workout);
+  };
 
-    $scope.ex2 = false;
-      $scope.toggle2 = function() {
-          $scope.ex2 = !$scope.ex2;
-    };
+  $scope.ex1 = false;
+    $scope.toggle1 = function() {
+        $scope.ex1 = !$scope.ex1;
+  };
 
-    $scope.ex3 = false;
-      $scope.toggle3 = function() {
-          $scope.ex3 = !$scope.ex3;
-    };
+  $scope.ex2 = false;
+    $scope.toggle2 = function() {
+        $scope.ex2 = !$scope.ex2;
+  };
 
-    $scope.ex4 = false;
-      $scope.toggle4 = function() {
-          $scope.ex4 = !$scope.ex4;
-    };
+  $scope.ex3 = false;
+    $scope.toggle3 = function() {
+        $scope.ex3 = !$scope.ex3;
+  };
 
-    $scope.ex5 = false;
-      $scope.toggle5 = function() {
-          $scope.ex5 = !$scope.ex5;
-    };
+  $scope.ex4 = false;
+    $scope.toggle4 = function() {
+        $scope.ex4 = !$scope.ex4;
+  };
 
-    $scope.currentPage = 0;
-    $scope.pageSize = 1;
-    $scope.data = [];
-    $scope.numberOfPages=function(){
-        return Math.ceil($scope.data.length/$scope.pageSize);                
-    }
-    for (var i=0; i<4; i++) {
-        $scope.data.push("Item "+i);
-    }
+  $scope.ex5 = false;
+    $scope.toggle5 = function() {
+        $scope.ex5 = !$scope.ex5;
+  };
+
+  $scope.currentPage = 0;
+  $scope.pageSize = 2;
+  $scope.data = [];
+  $scope.numberOfPages=function(){
+      return Math.ceil($scope.data.length/$scope.pageSize);                
+  }
+  for (var i=0; i<4; i++) {
+      $scope.data.push("Item "+i);
+  }
 
 }
 

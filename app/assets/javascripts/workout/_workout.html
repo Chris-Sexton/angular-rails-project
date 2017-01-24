@@ -1,43 +1,45 @@
-<div ng-include="'nav/_workoutNav.html'"></div> 
 
-<div class="row">
-  <input class="col m6 offset-m3" ng-model="query" placeholder="Search">
-</div>
+  <div ng-include="'nav/_workoutNav.html'"></div> 
 
   <div class="row">
-    <select id="organizeCat" ng-model="search" class="browser-default col m6 offset-m3">
-        <option value="" disabled="disabled" selected="selected">Choose Category</option>
-        <option value="">All Categories</option>
-        <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
-    </select>
+    <input class="col m6 offset-m3" ng-model="query" placeholder="Search">
   </div>
 
-<div>
-  <table class="centered col s12 m6 l6">
-    <thead>
-      <tr>
-          <th ng-model="title">Title</th> 
-          <th ng-model="category">Category</th>
-          <th ng-model="user">User</th>
-      </tr>
-    </thead>
+    <div class="row">
+      <select id="organizeCat" ng-model="search" class="browser-default col m6 offset-m3">
+          <option value="" disabled="disabled" selected="selected">Choose Category</option>
+          <option value="">All Categories</option>
+          <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+      </select>
+    </div>
 
-    <tbody ng-repeat="workout in workouts | startFrom:currentPage*pageSize | limitTo:pageSize">
-      <tr>
-        <td><a ui-sref="workouts.show({ id: workout.id })">{{workout.title}}</a><a ng-click="destroy(workout)"><i class="material-icons">delete</i></a></td>
-        <td>{{workout.category}}</td>
-        <td>Created by: {{workout.user.username | uppercase }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div>
+      <table class="centered col s12 m6 l6">
+        <thead>
+          <tr>
+              <th ng-model="title">Title</th> 
+              <th ng-model="category">Category</th>
+              <th ng-model="user">User</th>
+              <th>Action</th>
+          </tr>
+        </thead>
 
-    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
-        Previous
-    </button>
-    {{currentPage+1}}/{{numberOfPages()}}
-    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
-        Next
-    </button>
-</div>
+        <tbody ng-repeat="workout in workouts | startFrom:currentPage*pageSize | limitTo:pageSize">
+          <tr>
+            <td><a ui-sref="edit({ id: workout.id })">{{workout.title}}</a>
+            <td>{{workout.category}}</td>
+            <td>Created by: {{workout.user.username | uppercase }}</td>
+          </tr>
+        </tbody>
+      </table>
 
-<ui-view></ui-view> 
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+            Previous
+        </button>
+        {{currentPage+1}}/{{numberOfPages()}}
+        <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+            Next
+        </button>
+    </div>
+
+      <ui-view></ui-view> 

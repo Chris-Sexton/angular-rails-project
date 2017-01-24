@@ -1,0 +1,17 @@
+<div ng-repeat="workout in workouts | filter: {id: id}">
+  <h1>Edit {{workout.title}} Workout</h1>
+</div>
+
+<div class="row" ng-repeat="workout in workouts | filter: {id: id}">
+  <form ng-submit='update(workout)' class="col s12" name="form">
+    <div class="row">
+      <div class="input col s6">
+        <input value="workout.title" name="title" ng-model="workout.title" type="text" class="validate" required="required">
+      </div>
+    </div>
+
+    <input class="btn waves-effect waves-light" type='submit' value="submit" name="action">
+      <i class="material-icons right">send</i>
+    </input>
+  </form>
+</div>

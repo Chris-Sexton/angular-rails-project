@@ -1,16 +1,18 @@
 angular
-  .module('app', ['ui.router', 'templates', 'Devise'])
+  .module('app', ['ui.router', 'templates', 'Devise', 'ngResource'])
   .directive('addExercise', function() {
     return {
       templateUrl: 'workout/_workoutForm.html'
     }
   })
+
   .filter('startFrom', function() {
     return function(input, start) {
-        start = +start; //parse to int
+        start = +start;
         return input.slice(start);
     }
   })
+
   .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -53,6 +55,17 @@ angular
         .state('workouts.show', {
           url: '/{id}',
           templateUrl: 'workout/_workoutShow.html',
+          controller: 'WorkoutCtrl',
+          resolve: {
+            workoutPromise: ['workouts', function(workouts){
+              return workouts.getAll();
+            }]
+          }
+        })
+
+        .state('edit', {
+          url: '/edit/{id}',
+          templateUrl: 'workout/_workoutEdit.html',
           controller: 'WorkoutCtrl',
           resolve: {
             workoutPromise: ['workouts', function(workouts){
