@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # resources :categories
   root to: 'application#home'
 
-  resources :workouts, only: [:create, :index, :show, :destroy] do 
+  resources :workouts, only: [:create, :index, :show, :update, :destroy] do 
     member do
      put '/upvote' => 'workouts#upvote'
      put '/downvote' => 'workouts#downvote'

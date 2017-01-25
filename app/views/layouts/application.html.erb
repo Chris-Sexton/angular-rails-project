@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Workout Routine</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application'%>
-    <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> 
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<head>
+  <title>Workout Routine</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js" %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+         
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-  <body ng-app='app'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body ng-app='app'>
 
-    <ui-view></ui-view>
+  <ui-view></ui-view>
 
-    <!--      <p class="notice"><%= notice %></p>
-         <p class="alert"><%= alert %></p> -->
+  <!--      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p> -->
 
-  </body>
+</body>
 </html>

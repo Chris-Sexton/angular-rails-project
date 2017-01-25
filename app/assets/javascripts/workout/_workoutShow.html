@@ -2,7 +2,7 @@
   <div class="col s12 m6 offset-m3">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text center">
-        <span class="card-title">{{workout.title}}</span>
+        <span class="card-title"><div inline-edit="workout.title" on-save="update(workout)"></div></span>
         <h6 class="center">Category - {{workout.category}}</h6>
         <h6 class="center"><i class="material-icons" ng-click="incrementUpvotes(workout)">thumb_up</i> - {{workout.upvotes}}</i></h6>
         <h6 class="center"><i class="material-icons" ng-click="incrementDownvotes(workout)">thumb_down</i> - {{workout.downvotes}}</i></h6>
@@ -17,9 +17,9 @@
 
           <tbody>
             <tr>
-              <td>{{workout.exercise}}<br>{{workout.exercise1}}<br>{{workout.exercise2}}<br>{{workout.exercise3}}<br>{{workout.exercise4}}</td>
-              <td>{{workout.sets}}<br>{{workout.set1}}<br>{{workout.set2}}<br>{{workout.set3}}<br>{{workout.set4}}</td>
-              <td>{{workout.reps}}<br>{{workout.rep2}}<br>{{workout.rep2}}<br>{{workout.rep3}}<br>{{workout.rep4}}</td>
+              <td><p inline-edit="workout.exercise" on-save="update(workout)"></p><p inline-edit="workout.exercise1" on-save="update(workout)"></p><p inline-edit="workout.exercise2" on-save="update(workout)"></p><p inline-edit="workout.exercise3" on-save="update(workout)"></p><p inline-edit="workout.exercise4" on-save="update(workout)"></p></td>
+              <td><p inline-edit="workout.sets" on-save="update(workout)"></p><p inline-edit="workout.set1" on-save="update(workout)"></p><p inline-edit="workout.set2" on-save="update(workout)"></p><p inline-edit="workout.set3" on-save="update(workout)"></p><p inline-edit="workout.set4" on-save="update(workout)"></p></td>
+              <td><p inline-edit="workout.reps" on-save="update(workout)"></p><p inline-edit="workout.rep1" on-save="update(workout)"></p><p inline-edit="workout.rep2" on-save="update(workout)"></p><p inline-edit="workout.rep3" on-save="update(workout)"></p><p inline-edit="workout.rep4" on-save="update(workout)"></p></td>
             </tr>
           </tbody>
         </table>
