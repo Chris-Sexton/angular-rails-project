@@ -1,4 +1,17 @@
-<div ng-include="'nav/_workoutNav.html'"></div> 
+<div ng-include="'nav/_workoutNav.html'"></div>
+
+<div class="row">
+  <input class="col m6 offset-m3" ng-model="query" placeholder="Search">
+</div>
+
+<div class="row">
+  <select id="organizeCat" ng-model="search" class="browser-default col m6 offset-m3">
+      <option value="" disabled="disabled" selected="selected">Choose Category</option>
+      <option value="">All Categories</option>
+      <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+  </select>
+</div>
+
 <div>
     <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">skip_previous</i>
     </button>
@@ -10,7 +23,7 @@
       <tr>
           <th ng-click="sort('title')">Title<i class="material-icons">swap_vert</i>
             <span ng-show="sortKey=='title'"></span>
-          </th> 
+          </th>
           <th ng-click="sort('category')">Category<i class="material-icons">swap_vert</i>
             <span ng-show="sortKey=='category'"></span>
           </th>
@@ -30,4 +43,4 @@
   </table>
 </div>
 
-<ui-view></ui-view> 
+<ui-view></ui-view>

@@ -1,5 +1,5 @@
 function WorkoutCtrl($scope, $state, $stateParams, workouts) {
-  
+
   $scope.workouts = workouts.workouts;
 
   $scope.id = $state.params.id;
@@ -8,7 +8,7 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
       workouts.destroy(workout);
   };
 
-  $scope.categories = [ 
+  $scope.categories = [
     {"name" :"Arms"},
     {"name" :"Back"},
     {"name" :"Chest"},
@@ -100,7 +100,7 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   $scope.pageSize = 10;
   $scope.data = [];
   $scope.numberOfPages=function(){
-      return Math.ceil($scope.data.length/$scope.pageSize);                
+      return Math.ceil($scope.data.length/$scope.pageSize);
   }
   for (var i=0; i<5; i++) {
       $scope.data.push("Item "+i);
@@ -113,6 +113,6 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
 
 }
 
-angular 
+angular
   .module('app')
   .controller('WorkoutCtrl', WorkoutCtrl);
