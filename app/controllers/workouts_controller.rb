@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
     respond_with Workout.all
   end
 
-  def create 
+  def create
     respond_with Workout.create(workout_params.merge(user_id: current_user.id))
   end
 
@@ -39,11 +39,8 @@ class WorkoutsController < ApplicationController
     end
   end
 
-  private 
-
   def workout_params
-    params.require(:workout).permit(:title, :exercise, :sets, :reps, :category, :exercise1, 
-      :exercise2, :exercise3, :exercise4, :set1, :set2, :set3, :set4, :rep1, :rep2, :rep3, :rep4)
+    params.require(:workout).permit(:title, :exercise, :sets, :reps, :category)
   end
 
 end

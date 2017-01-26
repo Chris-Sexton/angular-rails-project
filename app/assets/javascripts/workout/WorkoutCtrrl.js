@@ -1,4 +1,4 @@
-function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+function WorkoutCtrl($scope, $state, $stateParams, workouts, $templateCache) {
 
   $scope.workouts = workouts.workouts;
 
@@ -34,36 +34,9 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
       category: $scope.category,
       exercise: $scope.exercise,
       sets: $scope.sets,
-      reps: $scope.reps,
-      exercise1: $scope.exercise1,
-      exercise2: $scope.exercise2,
-      exercise3: $scope.exercise3,
-      exercise4: $scope.exercise4,
-      set1: $scope.set1,
-      set2: $scope.set2,
-      set3: $scope.set3,
-      set4: $scope.set4,
-      rep1: $scope.rep1,
-      rep2: $scope.rep2,
-      rep3: $scope.rep3,
-      rep4: $scope.rep4
+      reps: $scope.reps
     });
-    $scope.title = '';
-    $scope.exercise = '';
-    $scope.sets = '';
-    $scope.reps = '';
-    $scope.exercise1 = '';
-    $scope.exercise2 = '';
-    $scope.exercise3 = '';
-    $scope.exercise4 = '';
-    $scope.set1 = '';
-    $scope.set2 = '';
-    $scope.set3 = '';
-    $scope.set4 = '';
-    $scope.rep1 = '';
-    $scope.rep2 = '';
-    $scope.rep3 = '';
-    $scope.rep4 = '';
+    debugger;
   };
 
   $scope.update = function(workout) {
@@ -97,12 +70,12 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   };
 
   $scope.currentPage = 0;
-  $scope.pageSize = 10;
+  $scope.pageSize = 5;
   $scope.data = [];
   $scope.numberOfPages=function(){
       return Math.ceil($scope.data.length/$scope.pageSize);
   }
-  for (var i=0; i<5; i++) {
+  for (var i=0; i<10; i++) {
       $scope.data.push("Item "+i);
   }
 
