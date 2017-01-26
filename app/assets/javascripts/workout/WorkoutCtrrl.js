@@ -1,4 +1,4 @@
- function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   
   $scope.workouts = workouts.workouts;
 
@@ -64,9 +64,6 @@
     $scope.rep2 = '';
     $scope.rep3 = '';
     $scope.rep4 = '';
-    // $scope.exercise2: '';
-    // $scope.exercise3: '';
-    // $scope.exercise4: '';
   };
 
   $scope.update = function(workout) {
@@ -100,15 +97,19 @@
   };
 
   $scope.currentPage = 0;
-  $scope.pageSize = 3;
+  $scope.pageSize = 10;
   $scope.data = [];
   $scope.numberOfPages=function(){
       return Math.ceil($scope.data.length/$scope.pageSize);                
   }
-  for (var i=0; i<50; i++) {
+  for (var i=0; i<5; i++) {
       $scope.data.push("Item "+i);
   }
 
+  $scope.sort = function(keyname){
+        $scope.sortKey = keyname;
+        $scope.reverse = !$scope.reverse;
+    }
 
 }
 
