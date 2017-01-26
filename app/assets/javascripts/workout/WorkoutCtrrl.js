@@ -47,11 +47,8 @@
       rep2: $scope.rep2,
       rep3: $scope.rep3,
       rep4: $scope.rep4
-      // exercise3: $scope.exercise3,
-      // exercise4: $scope.exercise4
     });
     $scope.title = '';
-    // $scope.category = '';
     $scope.exercise = '';
     $scope.sets = '';
     $scope.reps = '';
@@ -67,6 +64,9 @@
     $scope.rep2 = '';
     $scope.rep3 = '';
     $scope.rep4 = '';
+    // $scope.exercise2: '';
+    // $scope.exercise3: '';
+    // $scope.exercise4: '';
   };
 
   $scope.update = function(workout) {
@@ -100,14 +100,15 @@
   };
 
   $scope.currentPage = 0;
-  $scope.pageSize = 2;
+  $scope.pageSize = 3;
   $scope.data = [];
   $scope.numberOfPages=function(){
       return Math.ceil($scope.data.length/$scope.pageSize);                
   }
-  for (var i=0; i<4; i++) {
+  for (var i=0; i<50; i++) {
       $scope.data.push("Item "+i);
   }
+
 
 }
 

@@ -17,8 +17,11 @@ angular.module('app')
   };
 
   o.update = function(workout) {
+    // console.log(workout);
 
-    return $http.put('/workouts/' + workout.id + '.json', workout).then(function(response){
+    return $http.put('/workouts/' + workout.id + '.json', workout).error(function(data) {
+      alert('You can only update your own post!')
+    }).then(function(response){
       return response.data;
     });
   };
@@ -44,7 +47,9 @@ angular.module('app')
   };
 
   o.destroy = function(workout) {
-    return $http.delete('/workouts/' + workout.id + '.json').then(function(data) {
+    return $http.delete('/workouts/' + workout.id + '.json').error(function(data) {
+      alert('You can only delete your own post!')
+    }).then(function(data) {
       o.workouts.splice(o.workouts.indexOf(workout), 1);
     });
   };
