@@ -1,4 +1,4 @@
-function WorkoutCtrl($scope, $state, $stateParams, workouts) {
+ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
 
   $scope.workouts = workouts.workouts;
 
@@ -36,8 +36,10 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
       sets: $scope.sets,
       reps: $scope.reps
     });
-
-    debugger;
+    $scope.title = '';
+    $scope.exercise = '';
+    $scope.sets = '';
+    $scope.reps = '';
   };
 
   $scope.update = function(workout) {
@@ -83,6 +85,8 @@ function WorkoutCtrl($scope, $state, $stateParams, workouts) {
   $scope.sort = function(keyname){
         $scope.sortKey = keyname;
         $scope.reverse = !$scope.reverse;
+    }
+
 
 }
 
